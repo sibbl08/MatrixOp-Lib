@@ -7,8 +7,10 @@
 // Linea
 
 
-// Advanced
+// Advancded
 
+int* mat_mul(int* A, int* B, int size);
+int* mat_adj(int* A, int* B, int size);
 
 // Inverse
 

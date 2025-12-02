@@ -4,8 +4,8 @@
 // Basic Operations
 void mat_ADD(double A[SIZE][SIZE], double B[SIZE][SIZE], double C[SIZE][SIZE]){
 
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0; j < SIZE; j++){
             C[i][j] = A[i][j] + B[i][j];
         }
     }
@@ -13,8 +13,8 @@ void mat_ADD(double A[SIZE][SIZE], double B[SIZE][SIZE], double C[SIZE][SIZE]){
 
 void mat_SUB(double A[SIZE][SIZE], double B[SIZE][SIZE], double C[SIZE][SIZE]){
 
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0; j < SIZE; j++){
             C[i][j] = A[i][j] - B[i][j];
         }
     }
@@ -22,8 +22,8 @@ void mat_SUB(double A[SIZE][SIZE], double B[SIZE][SIZE], double C[SIZE][SIZE]){
 
 void mat_MUL_EW(double A[SIZE][SIZE], double B[SIZE][SIZE], double C[SIZE][SIZE]){
 
-    for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0; j < SIZE; j++){
             C[i][j] = A[i][j] * B[i][j];
         }
     }
@@ -32,7 +32,7 @@ void mat_MUL_EW(double A[SIZE][SIZE], double B[SIZE][SIZE], double C[SIZE][SIZE]
 // Linear
 void mat_TRANS(double A[SIZE][SIZE]){
     
-    int A_copy[SIZE][SIZE];
+    double A_copy[SIZE][SIZE];
     for (size_t i = 0; i < SIZE; i++)
     {
         for (size_t j = 0; j < SIZE; j++)
@@ -81,7 +81,7 @@ double mat_DET(double A[SIZE][SIZE])
 {
     double det = 0.0;
 
-    // Positive Diagonalen
+    // Positive Diagonals
     for (int start_col = 0; start_col < SIZE; start_col++) {
         double mult = 1.0;
 
@@ -92,8 +92,7 @@ double mat_DET(double A[SIZE][SIZE])
 
         det += mult;
     }
-
-    // Negative Diagonalen
+    // Negative Diagonals
     for (int start_col = 0; start_col < SIZE; start_col++) {
         double mult = 1.0;
 
@@ -108,7 +107,7 @@ double mat_DET(double A[SIZE][SIZE])
     return det;
 }
 
-double det2x2(double m[2][2])
+static double det2x2(double m[2][2])
 {
     return m[0][0]*m[1][1] - m[0][1]*m[1][0];
 }

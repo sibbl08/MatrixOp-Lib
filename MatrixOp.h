@@ -14,7 +14,6 @@ void mat_TRANS(double A[SIZE][SIZE]);
 
 
 // Advancded
-double det2x2(double m[2][2]);
 double mat_DET(double A[SIZE][SIZE]);
 void mat_ADJ(double A[SIZE][SIZE], double SOL[SIZE][SIZE]);
 
